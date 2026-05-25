@@ -1,0 +1,61 @@
+body{
+    background-color: rgb(30, 30, 30);
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url('./assets/gatofest2.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+#center{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px;
+}
+
+.CardGato{
+    background-color:aqua;
+    width: 250px;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.CardGato img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.CardGato h2{
+    color: black;
+    margin-top: 10px;
+}
+
+.CardGato p{
+    color: rgb(50, 50, 50);
+    font-size: 16px;
+}
