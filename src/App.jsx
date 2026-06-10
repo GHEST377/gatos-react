@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
 
-        <Route path="/gatos-react" element={<Home />} />
+        <Route path="/gatos-react/" element={<Home />} />
           <Route
             path="/gatos-react/:gatoId"
             element={<Gato/>}
