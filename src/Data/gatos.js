@@ -5,34 +5,52 @@ import bravoImagem from '../assets/gatobravo.jpg'
 import rindoImagem from '../assets/gatorindo.jpg'
 import exlodeImage from '../assets/catExplode.gif'
 
-const gatos = {
+const gatos = [
 
-    Formal:{
+    {
+        id: 1,
+        nome: "Gato Formal",
         descricaoGato: "Um gato elgante",
         imagem: formalImagem
     },
-    Explosao:{
+
+    {
+        id: 2,
+        nome: "Gato explosão",
         descricaoGato: "Um gato com explosão de fundo",
         imagem: explosionImagem
     },
-    Cafe:{
+
+    {
+        id: 3,
+        nome: "Gato Café",
         descricaoGato: "Um gato tomando seu café",
         imagem: cafeImagem
     },    
-    Rindo:{
+
+    {
+        id: 4,
+        nome: "Gato Rindo",
         descricaoGato: "Um gato rindo de algo",
         imagem: rindoImagem
     },
-    Bravo:{
+
+    {
+        id: 5,
+        nome: "Gato Bravo",
         descricaoGato: "Um gato bravo com algo",
         imagem: bravoImagem
     },
-    Explode:{
-        descricaoGato: "Um gato que-",
+
+    {
+        id: 6,
+        nome: "Gato Explodindo",
+        descricaoGato:
+         "Um gato que-  Ele explodiu... de novo aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         imagem: exlodeImage
     }
     
 
-}
+]
 
 export default gatos

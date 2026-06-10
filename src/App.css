@@ -60,3 +60,38 @@ h2{
     font-size: 16px;
 }
 
+.CardGato button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.CardGato button:hover{
+    background-color: rgb(200, 0, 0);
+}
+
+.CardGato.counter{
+    margin-top: 10px;
+    font-size: 18px;
+    color: rgb(50, 50, 50);
+}
+
+.botaoVoltar{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgb(0, 0, 255);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20%;
+
+}
+
+.botaoVoltar:hover{
+    background-color: rgb(0, 0, 100);
+}
