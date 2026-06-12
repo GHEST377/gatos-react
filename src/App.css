@@ -1,97 +1,284 @@
 body{
-    background-color: rgb(30, 30, 30);
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-}
 
-body{
-    background-image: url('./assets/gatofest2.gif');
+    /* background-image: url('./assets/gatofest2.gif'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
 
+/* PERFIL */
+
+.perfil{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    max-width: 900px;
+    margin: 40px auto 20px auto;
+
+    padding: 20px;
+}
+
+.fotoPerfil{
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.infoPerfil h1{
+    color: white;
+    margin: 0 0 15px 0;
+}
+
+.infoPerfil p{
+    color: rgb(220,220,220);
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
-    text-align: center;
+.estatisticas{
+    display: flex;
+    gap: 20px;
+
     color: white;
-    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
-h2{
-    text-align: center;
-    color: white;
+.linha{
+    border-top: 1px solid #444;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
 }
+
+/* GRADE DE POSTS */
 
 #center{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 5px;
+
+    max-width: 900px;
+    margin: 0 auto;
+
+    padding: 10px;
 }
 
+.menuPosts{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.menuPosts button{
+    background:none;
+    border:none;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    padding:10px;
+}
+
+.menuPosts button.ativo{
+    border-bottom:2px solid white;
+}
+
+.vazio{
+    color:white;
+    text-align:center;
+    grid-column:1 / -1;
+}
+
+/* CARD */
+
 .CardGato{
-    background-color:rgb(0, 248, 248);
-    width: 250px;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    overflow: hidden;
 }
 
 .CardGato img{
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
-    border-radius: 10px;
+
+    border-radius: 0;
+
+    display: block;
+
+    transition: 0.2s;
 }
 
-.CardGato h2{
-    color: black;
-    margin-top: 10px;
+.CardGato img:hover{
+    opacity: 0.8;
+    cursor: pointer;
 }
 
-.CardGato p{
-    color: rgb(50, 50, 50);
+/* BOTÃO VOLTAR */
+
+.botaoVoltar{
+    margin: 20px;
+
+    padding: 12px 24px;
+
+    background-color: #000000;
+
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
     font-size: 16px;
 }
 
-.CardGato button{
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: rgb(255, 0, 0);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.CardGato button:hover{
-    background-color: rgb(200, 0, 0);
-}
-
-.CardGato.counter{
-    margin-top: 10px;
-    font-size: 18px;
-    color: rgb(50, 50, 50);
-}
-
-.botaoVoltar{
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: rgb(0, 0, 255);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 20%;
-
-}
-
 .botaoVoltar:hover{
-    background-color: rgb(0, 0, 100);
+    background-color: #1877f2;
+}
+
+/* POSTS */
+
+.menuPosts{
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    color: white;
+    font-size: 14px;
+
+    padding: 15px 0;
+}
+
+.paginaPost{
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.postContainer{
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.imagemPost{
+    width: 500px;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.infoPost{
+    flex: 1;
+    color: white;
+}
+
+.usuarioPost{
+    margin-top: 0;
+}
+
+.descricao{
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.estatisticasPost{
+    margin-top: 20px;
+}
+
+.estatisticasPost p{
+    font-size: 18px;
+}
+
+.listaComentarios{
+    text-align: left;
+    margin-top: 20px;
+}
+
+.listaComentarios p{
+    margin: 10px 0;
+}
+
+.cardPost{
+    max-width: 1100px;
+
+    margin: 30px auto;
+
+    display: flex;
+
+    background: rgba(20,20,20,0.95);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.ladoImagem{
+    flex: 1.3;
+}
+
+.imagemPost{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.ladoInfo{
+    flex: 1;
+
+    padding: 20px;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalhoPost{
+    font-size: 20px;
+    font-weight: bold;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.descricaoPost{
+    margin-top: 15px;
+}
+
+.curtidas{
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+.listaComentarios{
+    margin-top: 15px;
+
+    overflow-y: auto;
+
+    flex: 1;
+}
+
+.listaComentarios p{
+    margin: 10px 0;
+
+    text-align: left;
 }

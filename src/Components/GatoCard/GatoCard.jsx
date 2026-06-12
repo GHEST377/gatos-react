@@ -22,13 +22,13 @@ function GatoCard({nome,caminhoImagem,descricaoGato,id}){
 
             {/* <p>Descrição: {descricaoGato}</p> */}
 
-            <button onClick={() => setComprados(comprados + 1)}>
+            {/* <button onClick={() => setComprados(comprados + 1)}>
                 Comprar
             </button>
 
             <p>
                 Gatos comprados: {comprados}
-            </p>
+            </p> */}
 
         </div>
     )

@@ -1,60 +1,116 @@
 import { useState } from 'react'
 import '../App.css'
+
 import GatoCard from '../Components/GatoCard/GatoCard'
+
 import gatos from '../Data/gatos.js'
 
+import hero from '../assets/joia.png'
+
+function Home() {
+
+   const [filtro, setFiltro] = useState("todos")
+
+   const gatosFiltrados = gatos.filter((gato) => {
+
+      if (filtro === "todos") {
+         return true
+      }
+
+      if (filtro === "marcados") {
+         return false
+      }
+
+      return gato.tipo === filtro
+
+   })
+
+   return (
+      <>
+
+         <section className="perfil">
+
+            <img
+               src={hero}
+               alt="Perfil"
+               className="fotoPerfil"
+            />
+
+            <div className="infoPerfil">
+
+               <h1>Gatos do GHEST377</h1>
+
+               <div className="estatisticas">
+                  <span>{gatos.length} publicações</span>
+                  <span>120 seguidores</span>
+                  <span>50 seguindo</span>
+               </div>
+
+               <p>
+                  Perfil dedicado aos gatos mais aleatórios da internet 🐱 :D
+               </p>
+
+            </div>
+
+         </section>
+
+         <div className="linha">
+            __________________________________________________________________________________________________________________________
+         </div>
+
+         <div className="menuPosts">
+
+            <button
+               className={filtro === "todos" ? "ativo" : ""}
+               onClick={() => setFiltro("todos")}
+            >
+               ⬜ POSTS
+            </button>
+
+            <button
+               className={filtro === "reel" ? "ativo" : ""}
+               onClick={() => setFiltro("reel")}
+            >
+               🎬 REELS
+            </button>
+
+            <button
+               className={filtro === "marcados" ? "ativo" : ""}
+               onClick={() => setFiltro("marcados")}
+            >
+               🏷️ MARCADOS
+            </button>
+
+         </div>
+
+         
 
 
+         <section id="center">
 
+            {gatosFiltrados.length > 0 ? (
 
-function Home(){
-   const [listaGatos, setListaGatos] = useState(gatos)
-    //    {id: 1, nome: "Gato Formal", descricaoGato: gatos["Formal"].descricaoGato, caminhoImagem: gatos["Formal"].imagem},
-    //    {id: 2, nome: "Gato Explosão", descricaoGato: gatos["Explosao"].descricaoGato, caminhoImagem: gatos["Explosao"].imagem},
-    //    {id: 3, nome: "Gato Café", descricaoGato: gatos["Cafe"].descricaoGato, caminhoImagem: gatos["Cafe"].imagem},
-    //    {id: 4, nome: "Gato Rindo", descricaoGato: gatos["Rindo"].descricaoGato, caminhoImagem: gatos["Rindo"].imagem},
-    //    {id: 5, nome: "Gato Bravo", descricaoGato: gatos["Bravo"].descricaoGato, caminhoImagem: gatos["Bravo"].imagem},
-    //    {id: 6, nome: "Gato Explodindo", descricaoGato: gatos["Explode"].descricaoGato, caminhoImagem: gatos["Explode"].imagem}
-     
-   
-   
-     return (
-       <>
-         <h1>LOJA DE GATITOS :D</h1>
-   
-         <h2>Gatitos diponíveis nessa página: {listaGatos.length}</h2>
-   
-           <section id="center">
-   
-            {
-             listaGatos.map((gato) => (
-            
-                <GatoCard
-                 id={gato.id}
-                 key={gato.id}
-                 nome={gato.nome}
-                 caminhoImagem={gato.imagem}
-                 descricaoGato={gato.descricaoGato}
-                />
-             ))
-            }
+               gatosFiltrados.map((gato) => (
+                  <GatoCard
+                     key={gato.id}
+                     id={gato.id}
+                     caminhoImagem={gato.imagem}
+                     descricaoGato={gato.descricaoGato}
+                  />
+               ))
 
-   
-   
-   
-         {/* <PokemonCard 
-            nome={"Pikachu?"}
-            estagio={1}
-            caminhoImagem={pokemons["Mimikyu"].imagem}
-            evoluirPokemon={() => evoluirPokemon(gatos.nome)}
-            />  */}
-         </section> 
-          </>
-        
-        
-    )    
-          
+            ) : (
+
+               <p className="vazio" >
+                  Nenhuma publicação encontrada.
+               </p>
+
+            )}
+
+         </section>
+
+      </>
+   )
 }
 
-
-export default Home;
+export default Home
